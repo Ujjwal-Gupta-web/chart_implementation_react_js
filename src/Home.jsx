@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import BarChart from './Charts/BarChart';
 import { get_schedule_dates } from './helper/helpers'
 
 const Home = () => {
@@ -41,11 +42,12 @@ const Home = () => {
             <br /><hr />
 
             <h4>Event Date : {inputDate}</h4>
-            {inputDate !== "" && keys.length > 0 ? keys.map(key => <p>
-                {/* {console.log("KEY : ",key)} */}
-                <Card datekey={(key)} dates={dates} times={times}/>
-                <hr />
-            </p>) : <>NO records found</>}
+            
+
+
+            
+        {inputDate && <BarChart dates={dates} keys={keys} times={times}/>}
+      
         </div>
     )
 }
@@ -83,3 +85,11 @@ const getInterval=(index)=>{
     else if(index===6) return("06pm to 09pm");
     else if(index===7) return("09pm to 12am");
 }
+
+// {
+//     inputDate !== "" && keys.length > 0 ? keys.map(key => <p>
+//         {/* {console.log("KEY : ",key)} */}
+//         <Card datekey={(key)} dates={dates} times={times}/>
+//         <hr />
+//     </p>) : <>NO records found</>
+//     }
