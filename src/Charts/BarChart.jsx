@@ -8,7 +8,7 @@ function BarChart({ dates, keys, times }) {
         labels: keys,
         datasets: [
             {
-                label: "Bookings on the date",
+                label: "no of deliveries booked on the day",
                 data: keys.map((data) => dates[data].length),
                 backgroundColor: [
                     "rgba(75,192,192,1)",
@@ -30,6 +30,7 @@ function BarChart({ dates, keys, times }) {
     };
 
     return <>
+    <div style={styles.barContainer}>
         <div style={{ width: "600px" }}>
             <Bar
                 data={chartData}
@@ -37,11 +38,19 @@ function BarChart({ dates, keys, times }) {
             />
         </div>
         <hr />
-        <>Chosen date : {timeKey}</>
+        
         <hr />
         <div style={{ width: "600px" }}>
+            {timeKey?<>
+            <div style={styles.dateContainer}>Booked on date<br/>{timeKey}</div>
             <BarChartSub times={times} timeKey={timeKey} />
+            </>:
+            <>
+            Click on any of the booking dates in the graph to see further details
+            </>
+            }
         </div>
+    </div>
     </>
 }
 
@@ -54,7 +63,7 @@ function BarChartSub({ times, timeKey }) {
         labels: ["12am to 03am", "03am to 06am", "06am to 09am", "09am to 12pm", "12pm to 03pm", "03pm to 06pm", "06pm to 09pm", "09pm to 12am"],
         datasets: [
             {
-                label: "Bookings on the time",
+                label: "no of deliveries for the slot",
                 data: times[timeKey].map(val => val),
                 backgroundColor: [
                     "rgba(75,192,192,1)",
@@ -72,4 +81,14 @@ function BarChartSub({ times, timeKey }) {
     return <Bar
         data={chartData}
     />;
+}
+
+const styles={
+    barContainer:{
+        display:"flex",
+    },
+    dateContainer:{
+        textAlign:"right",
+        marginVertical:"3px"
+    }
 }
