@@ -1,3 +1,23 @@
+# Intitial View of the dashboard
+<img src="./readme_assets/1.png" height="500px" width="1000px"/>
+
+
+# After Selecting Schedule date
+    dates at which delivery was scheduled along with no of deleveries booked on that day are shown by the graph
+<img src="./readme_assets/2.png" height="500px" width="1000px"/>
+<hr/>
+<img src="./readme_assets/3.png" height="500px" width="1000px"/>
+
+
+# After Clicking on a particular booking date
+    after clicking on a particular date we get the time slot for which the deleveries are scheduled
+<img src="./readme_assets/4.png" height="500px" width="1000px"/>
+
+
+<br/><br/>
+<hr/>
+<br/><br/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
