@@ -18,7 +18,7 @@ const Home = () => {
             <div style={styles.card}>
             <h4>Delivery Date : {inputDate}</h4>
                 <div style={styles.selectDate}>
-                        Select Delivery date
+                        <b>Select Delivery date</b>
                         <br/>
                         <input
                         type='date'

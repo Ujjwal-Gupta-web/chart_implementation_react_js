@@ -42,7 +42,7 @@ function BarChart({ dates, keys, times }) {
         <hr />
         <div style={{ width: "600px" }}>
             {timeKey?<>
-            <div style={styles.dateContainer}>Booked on date<br/>{timeKey}</div>
+            <div style={styles.dateContainer}><b>Booked on date</b><br/>{timeKey}</div>
             <BarChartSub times={times} timeKey={timeKey} />
             </>:
             <>
